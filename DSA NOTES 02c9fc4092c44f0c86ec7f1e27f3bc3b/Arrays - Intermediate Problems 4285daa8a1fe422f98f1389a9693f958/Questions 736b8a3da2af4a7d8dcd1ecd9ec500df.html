@@ -1,0 +1,673 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Questions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="736b8a3d-a2af-4a7d-8dcd-1ecd9ec500df" class="page sans"><header><h1 class="page-title">Questions</h1></header><div class="page-body"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Question Name</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"></path></svg></span>Difficulty</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tag</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>Approach</th></tr></thead><tbody><tr id="4164569b-9250-49ce-a43d-3919bf7b7c14"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q1%20Rotation%20Game%204164569b925049cea43d3919bf7b7c14.html">Q1. Rotation Game</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Reverse the original Array , Swap from 0 to K - 1 Elements , Swap from k to N - 1 Elements</td></tr><tr id="a3a14e39-e209-4940-b534-dff8f55cfef2"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q2%20Good%20Pair%20a3a14e39e2094940b534dff8f55cfef2.html">Q2. Good Pair</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Two loops , i = 0 , j = j + 1 , then start comparing i + j == B</td></tr><tr id="dbb5d511-6ee1-4aa8-8c68-ebea7368b06d"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q3%20Max%20and%20Min%20of%20an%20Array%20dbb5d5116ee14aa88c68ebea7368b06d.html">Q3. Max and Min of an Array</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Initalize MinVal and MaxVal with A[0] or INTMIN OR INTMAX and iterate Array and compare</td></tr><tr id="d50ded7f-057e-4624-96ee-1ef685bb08db"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q4%20Reverse%20the%20Array%20d50ded7f057e462496ee1ef685bb08db.html">Q4. Reverse the Array</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Two Pointer Approach , s = 0 , e = N - 1 , then start swapping the elements </td></tr><tr id="e59ab93b-dedb-4960-950e-7a645acf8a2c"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q5%20Search%20Element%20e59ab93bdedb4960950e7a645acf8a2c.html">Q5. Search Element</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Run while loop for each Testcase ,For each T, Take input A and B , iterate over B and check B is there A</td></tr><tr id="94a4715f-2d03-4e18-92f3-afb7272c5f95"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q6%20Little%20Ponny%20and%20Maximum%20Element%2094a4715f2d034e1892f3afb7272c5f95.html">Q6. Little Ponny and Maximum Element</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Check B is in Array , if present check max vals &gt; B and return its count else return 0</td></tr><tr id="7957e2b4-ce0b-42cc-b644-7e9cb8cb0edf"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q7%20Second%20Largest%207957e2b4ce0b42ccb6447e9cb8cb0edf.html">Q7. Second Largest</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Find MaxVal or indx , then using MaxVal or index , find the second largest Value</td></tr><tr id="c2072c7f-3fb7-4cd8-9a34-75be79590069"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q8%20MINIMUM%20PICKS%20c2072c7f3fb74cd89a3475be79590069.html">Q8. MINIMUM PICKS</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Initialze maxE and minE , find max val for even indices and vice versa for odd , return maxE - minO</td></tr><tr id="56adc58d-7420-407a-b554-1e0c87775571"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q9%20Separate%20Odd%20Even%2056adc58d7420407ab5541e0c87775571.html">Q9. Separate Odd Even</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Initalize two Arrrays , Even and Odd , iterate through A and store Even indx and odd indx vals  in separate arrays</td></tr><tr id="88a2ef04-15e2-4c9c-9646-bd7a65ba167f"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q10%20Multiple%20left%20rotations%20of%20the%20array%2088a2ef0415e24c9c9646bd7a65ba167f.html">Q10. Multiple left rotations of the array</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Reverse the ARRAY ,REVERSE FROM <code>O TO N - K</code> ,REVERSE FROM <code>N-K TO N</code></td></tr><tr id="6cd15c79-a720-41fe-b649-8bf5624cc055"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q11%20Equilibrium%20index%20of%20an%20array%206cd15c79a72041feb6498bf5624cc055.html">Q11. Equilibrium index of an array</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-yellow">PrefixSum</span></td><td class="cell-up];">Create a Prefix Sum , Loop through the entire array and compare LSUM and RSUM of each index i of the array </td></tr><tr id="9d9b0612-8c61-45fb-8728-4f013fda4a7d"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q12%20Count%20ways%20to%20make%20sum%20of%20odd%20and%20even%20indexed%209d9b06128c6145fb87284f013fda4a7d.html">Q12. Count ways to make sum of odd and even indexed elements equal by removing an array element</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-yellow">PrefixSum</span></td><td class="cell-up];">Create a Odd and Even PF , Calculate the Odd and Even Sum of the index using loop , <code>TO = SumO(0,i-1) + SumE(i+1,N-1) , TE = SumE(O,i-1) + SumO(i+1,N-1)</code></td></tr><tr id="9365e706-f121-4c65-82bd-50101ae9900f"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q13%20Pick%20from%20both%20sides!%20(MaxSum%20from%20B%20elements)%209365e706f1214c6582bd50101ae9900f.html">Q13. Pick from both sides! (MaxSum from B elements)</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-yellow">PrefixSum</span></td><td class="cell-up];">Create PF for Array A , return PF[N-1] if N == B , intialize max_sum with the last b elements from the array ie .<code>max_sum=PF[N-1] - PF[N-B-1]</code> ,then iterate through the array and calculate PrefixSum + SuffixSum , <code>Sum= PF[i] + PF[N-1] - PF[N-B+i]</code> and the compare with the maxsum</td></tr><tr id="3a8ebdb6-3cad-4639-b207-93dd3a6d1acc"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q14%20Range%20Sum%20Query%203a8ebdb63cad4639b20793dd3a6d1acc.html">Q14.Range Sum Query</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-yellow">PrefixSum</span></td><td class="cell-up];">Create PF for Array A , initialze sumA , then loop through left to right find sum <code>SUM[S,E] = PF[END] - PF[START-1]</code></td></tr><tr id="fb1409d6-ad3e-4847-913c-778e547c6ad8"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q15%20Product%20array%20puzzle%20fb1409d6ad3e4847913c778e547c6ad8.html">Q15.Product array puzzle</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-yellow">PrefixSum</span></td><td class="cell-up];">Create PF Product Sum of A , find total product sum , for each index i , find <code>sum = total_sum // A[i]</code> and return this res array with the sum vals of i </td></tr><tr id="0a2c5a18-b9a0-4253-9e7f-81a37af693b5"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q16%20Special%20Subsequences%20AG%200a2c5a18b9a042539e7f81a37af693b5.html">Q16.Special Subsequences &quot;AG&quot;</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-purple">CarryForward</span></td><td class="cell-up];">Run the loop from 0 to N , initialize vars <code>NAs = 0 and ANS = 0,</code> when u found a <code>‘A’</code> increment <code>NAs ++</code> , and when u find a <code>‘G’</code> increment <code>ANS+NAs</code> , basically we are counting a subarray when we found a <code>‘G’</code> since we already have <code>‘A’</code> count stored in NAs</td></tr><tr id="a97c389f-6094-456c-a09c-23980fa5ad68"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q17%20Closest%20MinMax%20a97c389f6094456ca09c23980fa5ad68.html">Q17.Closest MinMax</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-purple">CarryForward</span></td><td class="cell-up];">find the min and max val of the array , then iterate from N -1 to 0 , now here we need to find the indexes of the min and max val and simultaneously calculate minimum length of these ie ,<code>length = maxIndx - minIndx + 1 , ans = min(ans,length)</code> and viceversa</td></tr><tr id="cf898e18-e5d4-438f-8c41-cf821b555ec7"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q18%20Amazing%20Subarrays%20cf898e18e5d4438f8c41cf821b555ec7.html">Q18.Amazing Subarrays</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-purple">CarryForward</span></td><td class="cell-up];">Create Vow List and Loop through the array ,initalize a var ans = 0 , check A[i] in vow  list and find its length <code>ie . length = N - i</code></td></tr><tr id="0f13c714-c6a7-4cfd-ae6a-5119fd04fe7d"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q19%20Even%20Subarrays%200f13c714c6a74cfdae6a5119fd04fe7d.html">Q19. Even Subarrays</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-purple">CarryForward</span></td><td class="cell-up];">Check , if N % 2 != 0 , if not return 0 , Else divide the Array into two subarrays <code>L = N // 2</code> and compare the first element from A and last element from B check if its even or not <code> `F = A[:L][0]`  `B = A[L:][-1]`</code></td></tr><tr id="e6111ce7-0a48-4e80-bce9-076ce233b1ea"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q19%20Leaders%20in%20a%20Array%20e6111ce70a484e80bce9076ce233b1ea.html">Q19. Leaders in a Array</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-purple">CarryForward</span></td><td class="cell-up];">Create a Leaders list , append A[-1] to it , init <code>maxE = A[-1]</code> loop from back and check if any Element is &gt; than A[s] , if so then append that ele to leaders list and make it as maxE , continue till end .</td></tr><tr id="b059b437-2945-4948-90b7-d57d743724f2"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q20%20Max%20Sum%20Contiguous%20Subarray%20b059b4372945494890b7d57d743724f2.html">Q20. Max Sum Contiguous Subarray</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];">Kadane’s Algorithm , Define two-variable currSum which stores maximum sum ending here and maxSum which stores maximum sum so far. If currSum is greater than maxSum, update maxSum equals to currSum. If currSum is less than zero, make currSum equal to zero.</td></tr><tr id="731148ab-9be4-414f-ae85-ee45b4f731ba"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q21%20Sum%20of%20All%20Subarrays%20731148ab9be4414fae85ee45b4f731ba.html">Q21.Sum of All Subarrays</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];">we need to find sum of all subarrays ,total_sum += (A[i] * (i+1) * (N-i))</td></tr><tr id="d3ae2ad8-2762-42fc-a702-c795f0515259"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q22%20Subarray%20with%20least%20average%20d3ae2ad8276242fca702c795f0515259.html">Q22.Subarray with least average</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-yellow">PrefixSum</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];">Create a PF for the array ,initialize vars with s = 0 , e = B- 1 ,res = sys.maxsize , out = len(A) , now run loop from while e &lt; N:, and find all sum using PF range query, find the minimum sum and its st index </td></tr><tr id="11f2c6bd-3b85-4104-b7dd-9cf06a8747ec"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q23%20Maximum%20Subarray%20Easy%2011f2c6bd3b854104b7dd9cf06a8747ec.html">Q23.Maximum Subarray Easy</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];">initialize max_sum = 0 , run two loops  i - 0 to N and j - i to N , and find sum of each subarray ,get the max and compare with B ,return its the sum if its lesser than B</td></tr><tr id="55596942-17ca-4982-9120-3e8283e7404f"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q24%20Counting%20Subarrays%20Easy%205559694217ca498291203e8283e7404f.html">Q24.Counting Subarrays Easy</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];">initialize count <code>= 0</code> , run two loops <code> i - 0 to N and j - i to N </code>and find sum of each subarray , compare with B ,it its lesser than B increase the count</td></tr><tr id="3047f7d4-e4b2-4d7b-9e24-577eadad2043"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q25%20Good%20Subarrays%20Easy%203047f7d4e4b24d7b9e24577eadad2043.html">Q25.Good Subarrays Easy</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];">two run loops <code>i - i to N , j - i</code> to N for each subarray , then <code>sum = 0 , length = 0</code> for each subarray cal these two var and check the subarray length odd or even
+if  its <code>length%2 != 0 and sum &gt; B</code> and odd else even <code>length%2 == 0 and sum &lt; B:</code> , increase the count</td></tr><tr id="b50b57a6-0b8a-4fae-b09f-6128a0423e5a"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q26%20Alternating%20Subarrays%20Easy%20b50b57a60b8a4faeb09f6128a0423e5a.html">Q26.Alternating Subarrays Easy</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];">• Create res array ,Run a for loop from i to N , inside loop create a <code>start = A[i]</code>, then again run a second for loop <code>j from i to min(i +b,N),</code> we need to compare it with <code>A[j]</code>, it it matches <code>count++,</code>make <code>start = 1 - start</code> after j loop , check <code>count == B</code> , if it is then append the mid elem to the result ie <code>(i+B//2)</code></td></tr><tr id="b33d6f1d-551f-4e6d-9d6f-08864b135f3f"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q27%20Add%20the%20matrices%20b33d6f1d551f4e6d9d6f08864b135f3f.html">Q27.Add the matrices</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Create C ,Run two Loops i - row and j- col, Add like this C[i][j] = A[i][j] + B[i][j] <code>[ i = row  , j = col ]</code></td></tr><tr id="bcfb25af-204d-429f-ba03-81fd0ef2dcb2"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q28%20Anti%20Diagonals%20bcfb25af204d429fba0381fd0ef2dcb2.html">Q28.Anti Diagonals</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Create a arr with <code>row - ((2 * N-1) * N ) // N</code> and cols of <code>len(A[0])</code> Need two Loops , one for 0th row and another one for last col</td></tr><tr id="b786fb6c-523e-4fac-85ba-0fc6960b5cd9"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q29%20Column%20Sum%20b786fb6c523e4fac85ba0fc6960b5cd9.html">Q29.Column Sum</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Create a arr res = [] and cols . Run first Loop for cols ,and run second a while loop for every row , ie<code> x = 0 , y  = i </code>keeping col constant and incrementing the row is the idea</td></tr><tr id="5cc129e5-79f7-440d-85ba-fa3636ea24a1"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q30%20Matrix%20Multiplication%205cc129e579f7440d85bafa3636ea24a1.html">Q30.Matrix Multiplication</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">If X is a <code>n x m</code> matrix and Y is a <code>m x l</code> matrix then, XY is defined and has the dimension <code>n x l</code> ,rows,<code> cols = (rowA, colB) </code> and <code>C = [[0 for i in range(cols)] for j in range(rows)]</code> now we need three loops <code># iterating by row of A, # iterating by column by B ,# iterating by rows of B</code> row = A[i][k] and col = B[k][j] C[i][j] += row * col</td></tr><tr id="627f1672-59b0-4bda-aa07-ae02d327e673"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q31%20Matrix%20Subtraction%20627f167259b04bdaaa07ae02d327e673.html">Q31.Matrix Subtraction</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Create a RES Array of len(A) and len(B) and Run two loops , i for row and j for col ,then calculate and store <code>res[row][col] = A[row][col] - B[row][col]</code></td></tr><tr id="457f8881-bd30-4d2b-8ea7-cab6a3736189"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q32%20Matrix%20Transpose%20457f8881bd304d2b8ea7cab6a3736189.html">Q32.Matrix Transpose</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Create a RES Array with rows and cols and fill with zero initally <code>arr = [[0]*rows for i in range(cols) ] ,</code>Run a loop for cols length and run another while loop <code>x = 0 y = i</code> ,interchange the row and col val like <code>arr[y][x]= A[x][y]</code></td></tr><tr id="ca31bfbe-fea7-4398-bb13-245a8750d16e"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q33%20Spiral%20Order%20Matrix%20II%20ca31bfbefea74398bb13245a8750d16e.html">Q33.Spiral Order Matrix II</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Create a RES Array with rows and cols and fill with zero initally ,create top, down, left , right pointers <code>rows, cols = A, A </code> C = [[0 for i in range(cols)] for j in range(rows)]
+top = 0 ,down = len(C) - 1 ,left = 0 ,right = len(C[0])  -1
+• create a <code>dir = ‘r’ use this to change dir and val = ‘1’</code>
+• <code>LEFT TO RIGHT , TOP TO DOWN , RIGHT TO LEFT , DOWN TO LEFT</code> - REPEAT</td></tr><tr id="a2af8e1d-57a9-4281-b8df-27331ee347d5"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q34%20Rotate%20Matrix%2090%20(INPLACE)%20a2af8e1d57a94281b8df27331ee347d5.html">Q34.Rotate Matrix 90* (INPLACE)</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">First Do transpose of the matrix and  then reverse the transposed matrix both row and cols wise </td></tr><tr id="8450a8de-185c-48e2-90e1-08182ea7dce3"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q34%20Are%20Matrices%20Same%208450a8de185c48e290e108182ea7dce3.html">Q34.Are Matrices Same ?</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">First Do transpose of the matrix and  then reverse the transposed matrix both row and cols wise </td></tr><tr id="813fc994-8e39-4617-babd-93def44b3319"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q35%20Matrix%20Product%20813fc9948e394617babd93def44b3319.html">Q35.Matrix Product</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Two Loops ,i - row and j - cols,and then for each cell multiply with B int <code>A[i][j] = B * A[i][j]</code></td></tr><tr id="a259e997-1b65-4493-b01f-8bf638d81583"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q36%20Minor%20Diagonal%20Sum%20a259e9971b654493b01f8bf638d81583.html">Q36.Minor Diagonal Sum</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Two Loops ,i - row and j - cols ,check the i+1 and j+1 == M , if  so sum += A[i][j]</td></tr><tr id="512f8707-eb7b-475d-bd59-cc350343f895"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q37%20Row%20Sum%20512f8707eb7b475dbd59cc350343f895.html">Q37.Row Sum</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Two Loops ,i - row and j - cols , sum += A[i][j] and append sum in res Array</td></tr><tr id="5124520a-9706-42a8-9239-b9d8fd0c13e8"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q38%20Row%20to%20Column%20Zero%205124520a970642a89239b9d8fd0c13e8.html">Q38.Row to Column Zero</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Create two set , <code>ColIndx = set()</code> and <code>RowIndx = set()</code> - to store indexes of zero’s val ,Two loops i - row , j - col and check <code>A[i][j] == 0</code> , if so then<code>`ColIndx.add(j)` RowIndx.add(i),</code>then again loop through the matrix and check if i in RowIndx or j in ColIndx , make that cell zero</td></tr><tr id="65ef6029-2485-4e98-a3b7-cdf15c3c3390"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q39%20Main%20Diagonal%20Sum%2065ef602924854e98a3b7cdf15c3c3390.html">Q39.Main Diagonal Sum</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-brown">2DArrays</span><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">Two loops i - row , j - col and check i and j are same if so then cal sum of that cell</td></tr><tr id="56eea09a-2b72-4f2a-b0ae-125c9bed33a7"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q40%20Length%20of%20longest%20consecutive%20ones%2056eea09a2b724f2ab0ae125c9bed33a7.html">Q40.Length of longest consecutive ones</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];">Count the number of 1s in the array. Find the longest consecutive 1s in the array .make a zero to 1 , one time and maintain count ,If the longest consecutive 1s is greater than the number of 1s in the array, return no_1s.  else return the longest consecutive 1s in the array.</td></tr><tr id="66c254cb-a2b5-4a0f-8e0e-f98f6740186a"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q41%20Christmas%20Trees%2066c254cba2b54a0f8e0ef98f6740186a.html">Q41.Christmas Trees</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span></td><td class="cell-up];">The approach we can use is to take a mid element and find the left most min element lesser than mid element and right most min element greater than it ,loop left to find the <code>left most min</code> element of the <code>array &lt; A[mid] ,</code>loop right to find the <code>right most min</code> element of the <code>array &gt; A[mid] ,</code>then <code>total_sum = tot = left + B[mid] + right</code>  , <code>min_sum = min(tot,min_sum)</code></td></tr><tr id="9209a3e1-e056-4e6d-8457-176d0eb7861c"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q42%20Maximum%20positivity%209209a3e1e0564e6d8457176d0eb7861c.html">Q42.Maximum positivity</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-yellow">Medium</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-blue">Subarrays</span></td><td class="cell-up];"> Initialize <code>st_indx , end_indx = 0 - temp vars</code> and s1 , e1 = 0 , 0 for result, Find the first positive element in the array. <code>if A[i] &lt; 0: st_indx = i+1 ,</code> Find the last positive element in the array. If the length of the subarray is greater than the max length, then update the max length.</td></tr><tr id="58f19cb0-0ea2-497e-a02b-6c4841b4151f"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Q43%20Star%20Pattern%20I%2058f19cb00ea2497ea02b6c4841b4151f.html">Q43.Star Pattern I</a></td><td class="cell-&#x27;i6/"><span class="selected-value select-value-color-green">Easy</span></td><td class="cell-K:tR"><span class="selected-value select-value-color-green">Arrays</span><span class="selected-value select-value-color-gray">Pattern</span></td><td class="cell-up];"> Need two separate loop i and j, in i we need print two triangles j and k (dec loop) , in bw we need l print space <code>((N-i)*2)</code> and vice versa for down part of the diamond</td></tr><tr id="e37a2d1a-f4b2-4660-98f2-506ed3c85a49"><td class="cell-title"><a href="Questions%20736b8a3da2af4a7d8dcd1ecd9ec500df/Untitled%20e37a2d1af4b2466098f2506ed3c85a49.html">Untitled</a></td><td class="cell-&#x27;i6/"></td><td class="cell-K:tR"></td><td class="cell-up];"></td></tr></tbody></table></div></article></body></html>
